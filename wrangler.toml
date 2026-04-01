@@ -1,36 +1,4 @@
-# Cloudflare Pages Configuration for HazardQuickTax.com
+name = "hazard-quick-tax"
+compatibility_date = "2024-04-01"
+pages_build_output_dir = "./"
 
-# Define the site configuration
-framework = "wrangler"
-
-# Build the project
-build = {
-  command = "npm run build"
-  directory = "dist"
-}
-
-# Define the environment
-env = {
-  dev = {
-    access_token = "$DEV_ACCESS_TOKEN"
-    workers_dev = true
-  }
-  production = {
-    access_token = "$PRODUCTION_ACCESS_TOKEN"
-    workers_dev = false
-  }
-}
-
-# Define the functions configuration
-functions = {
-  directory = "functions"
-  upload = "./functions/*"
-}
-
-# Define form handling capabilities
-forms = {
-  "example_form" = {
-    endpoint = "https://example.com/forms/submit"
-    method = "POST"
-  }
-}
